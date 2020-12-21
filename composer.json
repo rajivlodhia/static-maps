@@ -1,0 +1,16 @@
+{
+    "name": "rajiv-lodhia/static-maps",
+    "description": "A WordPress plugin to allow the simple creation of static maps.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Rajiv Lodhia",
+            "email": "r_lodhia@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {"Includes\\": "./includes"}
+    }
+}
