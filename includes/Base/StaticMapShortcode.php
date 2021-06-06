@@ -39,6 +39,6 @@ class StaticMapShortcode implements IRegister {
 		$map = new GoogleStaticMap($static_map_post);
 		$url = $map->generate_map_url();
 
-		return "<img src='$url' alt'$static_map_post->post_title'>";
+		return "<img src='$url' alt='$static_map_post->post_title'>";
 	}
 }
