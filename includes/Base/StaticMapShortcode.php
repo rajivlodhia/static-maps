@@ -32,7 +32,7 @@ class StaticMapShortcode implements IRegister {
 		$static_map_post = get_post($map);
 
 		// Make sure this is in fact a Static Map post. Return an empty string if not.
-		if ($static_map_post->post_type !== 'static_map') {
+		if (!isset($static_map_post) || $static_map_post->post_type !== 'static_map') {
 			return '';
 		}
 
