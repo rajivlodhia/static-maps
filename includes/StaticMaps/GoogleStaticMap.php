@@ -49,16 +49,26 @@ class GoogleStaticMap {
 	 * Gets the coordinates depending on which coordinate option was chosen.
 	 *
 	 * @param array $field_group The field group containing the coordinate options, coordinate text and map fields.
+	 * @param bool $coordinate_option
 	 *
 	 * @return string
 	 */
-	private function get_coords( array $field_group ) {
+	private function get_coords( array $field_group, $coordinate_option = false ) {
 		// Set some default coordinates.
 		$coordinates = '51.4925,-0.16707';
-		switch ( $field_group['coordinates_options'] ) {
+		if ( !$coordinate_option && !empty( $field_group['coordinates_options'] ) ) {
+			$coordinate_option = $field_group['coordinates_options'];
+		}
+
+		switch ( $coordinate_option ) {
 			case 'map':
+				// Handles the case for the regular Google Map field.
 				if ( ! empty( $field_group['map'] ) ) {
 					$coordinates = $field_group['map']['lat'] . ',' . $field_group['map']['lng'];
+				}
+				// Handles the case for the advanced multiple markers Google Map field.
+				elseif ( ! empty( $field_group['lat'] ) && ! empty( $field_group['lng'] ) ) {
+					$coordinates = $field_group['lat'] . ',' . $field_group['lng'];
 				}
 				break;
 
@@ -86,8 +96,16 @@ class GoogleStaticMap {
 			'size:' . $field_group['size'],
 		];
 
-		foreach ( $field_group['pins'] as $pin ) {
-			$marker[] = $this->get_coords( $pin );
+		// Mapping the coordinate options to the array index that holds the appropriate data.
+		$mapping = [
+			'map' => 'pins',
+			'text' => 'map_coordinates',
+		];
+		$coordinates = $field_group[$mapping[$field_group['coordinates_options']]];
+
+		$coordinate_option = ! empty( $field_group['coordinates_options'] ) ? $field_group['coordinates_options'] : false;
+		foreach ( $coordinates as $coords ) {
+			$marker[] = $this->get_coords( $coords, $coordinate_option );
 		}
 
 		// Join our marker data together with the encoded '|' (pipe) character.
