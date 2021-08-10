@@ -5,7 +5,6 @@
 
 namespace StaticMaps\Base;
 
-
 use StaticMaps\IRegister;
 use StaticMaps\StaticMaps\GoogleStaticMap;
 
@@ -39,6 +38,6 @@ class StaticMapShortcode implements IRegister {
 		$map = new GoogleStaticMap($static_map_post);
 		$url = $map->generate_map_url();
 
-		return "<img src='$url' alt='$static_map_post->post_title'>";
+		return "<img id='google-static-map-$static_map_post->ID' class='google-static-map' src='$url' alt='$static_map_post->post_title'>";
 	}
 }
