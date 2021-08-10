@@ -43,8 +43,8 @@ define( 'STATIC_MAPS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'STATIC_MAPS_PLUGIN_FILE', __FILE__ );
 
 // Initialise all the core classes of the plugin.
-if ( class_exists( 'Includes\\Init' ) ) {
-	Includes\Init::register_services();
+if ( class_exists( 'StaticMaps\\Init' ) ) {
+	StaticMaps\Init::register_services();
 }
 
 /**

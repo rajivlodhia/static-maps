@@ -3,7 +3,7 @@
  * @package StaticMaps
  */
 
-namespace Includes\Settings;
+namespace StaticMaps\Settings;
 
 
 class Field {

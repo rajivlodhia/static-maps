@@ -3,7 +3,7 @@
  * @package StaticMaps
  */
 
-namespace Includes\Base;
+namespace StaticMaps\Base;
 
 
 class Helper {

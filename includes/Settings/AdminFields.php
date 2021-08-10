@@ -3,7 +3,7 @@
  * @package StaticMaps
  */
 
-namespace Includes\Fields;
+namespace StaticMaps\Fields;
 
 /**
  * Class AdminFields

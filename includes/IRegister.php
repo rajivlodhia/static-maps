@@ -3,7 +3,7 @@
  * @package StaticMaps
  */
 
-namespace Includes;
+namespace StaticMaps;
 
  /**
   * Ensure all the necessary classes have a register function

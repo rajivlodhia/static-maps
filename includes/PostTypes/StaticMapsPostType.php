@@ -3,9 +3,9 @@
  * @package StaticMaps
  */
 
-namespace Includes\PostTypes;
+namespace StaticMaps\PostTypes;
 
-use Includes\IRegister;
+use StaticMaps\IRegister;
 
 class StaticMapsPostType implements IRegister {
     public function register() {

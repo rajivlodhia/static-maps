@@ -3,10 +3,10 @@
  * @package StaticMaps
  */
 
-namespace Includes\Base;
+namespace StaticMaps\Base;
 
-use Includes\IRegister;
-use Includes\Base\Constants;
+use StaticMaps\IRegister;
+//use StaticMaps\Base\Constants;
 
 class Activate implements IRegister{
     public function register() {

@@ -3,12 +3,12 @@
  * @package StaticMaps
  */
 
-namespace Includes\Pages;
+namespace StaticMaps\Pages;
 
-use Includes\Settings\Field;
-use Includes\IRegister;
-use Includes\Settings\Section;
-use Includes\Settings\Setting;
+use StaticMaps\Settings\Field;
+use StaticMaps\IRegister;
+use StaticMaps\Settings\Section;
+use StaticMaps\Settings\Setting;
 
 class Admin implements IRegister {
 	public function register() {

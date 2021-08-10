@@ -3,11 +3,11 @@
  * @package StaticMaps
  */
 
-namespace Includes\Base;
+namespace StaticMaps\Base;
 
 
-use Includes\IRegister;
-use Includes\StaticMaps\GoogleStaticMap;
+use StaticMaps\IRegister;
+use StaticMaps\StaticMaps\GoogleStaticMap;
 
 class StaticMapShortcode implements IRegister {
 	public function register() {

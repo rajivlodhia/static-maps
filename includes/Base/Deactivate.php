@@ -3,9 +3,9 @@
  * @package StaticMaps
  */
 
-namespace Includes\Base;
+namespace StaticMaps\Base;
 
-use Includes\IRegister;
+use StaticMaps\IRegister;
 
 class Deactivate implements IRegister {
     public function register() {

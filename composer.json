@@ -11,6 +11,6 @@
     "minimum-stability": "dev",
     "require": {},
     "autoload": {
-        "psr-4": {"Includes\\": "./includes"}
+        "psr-4": {"StaticMaps\\": "./includes"}
     }
 }

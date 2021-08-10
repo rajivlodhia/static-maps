@@ -3,9 +3,9 @@
  * @package StaticMaps
  */
 
-namespace Includes\StaticMaps;
+namespace StaticMaps\StaticMaps;
 
-use Includes\Base\Helper;
+use StaticMaps\Base\Helper;
 
 class GoogleStaticMap {
 
