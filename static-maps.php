@@ -50,82 +50,32 @@ if ( class_exists( 'StaticMaps\\Init' ) ) {
 /**
  * Advanced Custom Fields definitions.
  */
-// Define path and URL to the ACF plugin.
-define( 'STATIC_MAPS_ACF_PATH', STATIC_MAPS_PLUGIN_PATH . 'includes/acf/' );
-define( 'STATIC_MAPS_ACF_URL', STATIC_MAPS_PLUGIN_URL . 'includes/acf/' );
+if ( !function_exists('get_field') ) {
+	// Define path and URL to the ACF plugin.
+	define( 'STATIC_MAPS_ACF_PATH', STATIC_MAPS_PLUGIN_PATH . 'includes/acf/' );
+	define( 'STATIC_MAPS_ACF_URL', STATIC_MAPS_PLUGIN_URL . 'includes/acf/' );
+	// Include the ACF plugin.
+	include_once( STATIC_MAPS_ACF_PATH . 'acf.php' );
 
-// Include the ACF plugin.
-include_once( STATIC_MAPS_ACF_PATH . 'acf.php' );
+	// Customize the url setting to fix incorrect asset URLs.
+	add_filter( 'acf/settings/url', 'static_maps_acf_settings_url' );
+	function static_maps_acf_settings_url( $url ) {
+		return STATIC_MAPS_ACF_URL;
+	}
 
-// Customize the url setting to fix incorrect asset URLs.
-add_filter('acf/settings/url', 'static_maps_acf_settings_url');
-function static_maps_acf_settings_url( $url ) {
-	return STATIC_MAPS_ACF_URL;
+	// (Optional) Hide the ACF admin menu item.
+	//add_filter('acf/settings/show_admin', 'static_maps_acf_settings_show_admin');
+	function static_maps_acf_settings_show_admin( $show_admin ) {
+		return false;
+	}
 }
 
-// (Optional) Hide the ACF admin menu item.
-//add_filter('acf/settings/show_admin', 'static_maps_acf_settings_show_admin');
-function static_maps_acf_settings_show_admin( $show_admin ) {
-	return false;
-}
+/**
+ * ACF Google Map Multiple Markers definitions.
+ */
+if( !class_exists('gmm_acf_plugin_google_map_multi') ) {
+	define( 'STATIC_MAPS_ACF_GMM_PATH', STATIC_MAPS_PLUGIN_PATH . 'includes/acf-google-map-multi/' );
 
-//if( function_exists('acf_add_local_field_group') ):
-//
-//	acf_add_local_field_group(array(
-//		'key' => 'group_5fd64fb1993ad',
-//		'title' => 'Google Static Maps',
-//		'fields' => array(
-//			array(
-//				'key' => 'field_5fd64fe65abe0',
-//				'label' => 'Pins',
-//				'name' => 'pins',
-//				'type' => 'google_map',
-//				'instructions' => '',
-//				'required' => 0,
-//				'conditional_logic' => 0,
-//				'wrapper' => array(
-//					'width' => '',
-//					'class' => '',
-//					'id' => '',
-//				),
-//				'center_lat' => '',
-//				'center_lng' => '',
-//				'zoom' => 10,
-//				'height' => '',
-//			),
-//			array(
-//				'key' => 'field_5fd6501c5abe1',
-//				'label' => 'Colour',
-//				'name' => 'colour',
-//				'type' => 'color_picker',
-//				'instructions' => '',
-//				'required' => 0,
-//				'conditional_logic' => 0,
-//				'wrapper' => array(
-//					'width' => '',
-//					'class' => '',
-//					'id' => '',
-//				),
-//				'default_value' => '',
-//			),
-//		),
-//		'location' => array(
-//			array(
-//				array(
-//					'param' => 'post_type',
-//					'operator' => '==',
-//					'value' => 'static_map',
-//				),
-//			),
-//		),
-//		'menu_order' => 0,
-//		'position' => 'normal',
-//		'style' => 'seamless',
-//		'label_placement' => 'top',
-//		'instruction_placement' => 'label',
-//		'hide_on_screen' => '',
-//		'active' => true,
-//		'description' => '',
-//	));
-//
-//endif;
+	// Include the ACF Google Maps Multiple Markers field plugin.
+	include_once( STATIC_MAPS_ACF_GMM_PATH . 'acf-google-map-multi.php' );
+}
