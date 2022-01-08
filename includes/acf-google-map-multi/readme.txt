@@ -1,6 +1,6 @@
-=== ACF: Google Map Field (Multiple Markers) ===
+=== ACF: Google Maps Field (Multiple Markers) ===
 Contributors: Rajiv Lodhia
-Tags: acf, custom fields, advanced custom fields, google maps, maps
+Tags: acf, custom fields, advanced custom fields, google maps, maps, markers
 Requires at least: 4.7
 Tested up to: 5.8
 Requires PHP: 5.6
@@ -8,7 +8,7 @@ Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A Google Map field for ACF that allows you to add multiple markers to one single map.
+A Google Maps field for ACF that allows you to add multiple markers to one single map.
 
 == Description ==
 
@@ -32,7 +32,7 @@ This ACF field type is compatible with:
 
 == Usage Instructions ==
 
-On the new Google Map (Multiple Markers) field, you can:
+On the new Google Maps (Multiple Markers) field, you can:
 - LEFT CLICK on the map to place a new marker
 - RIGHT CLICK on a marker to remove it
 - CLICK AND DRAG a marker around on the map
@@ -64,3 +64,7 @@ This is a modified/enhanced version of the standard ACF Google Map plugin, so so
 = 1.0.1 =
 * Updated readme.
 * Tested with newest version of WordPress.
+
+= 1.0.2 =
+* Fixed bug where the field value wouldn't properly reset when adding a new marker.
+* Changed name from "Google Map" to "Google Maps"

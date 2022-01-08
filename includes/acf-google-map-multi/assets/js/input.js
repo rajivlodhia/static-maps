@@ -262,6 +262,9 @@
 				// We set the zoom and center to default values if there are no markers.
 				map.setZoom(8);
 				map.setCenter( {lat: 51.4934, lng: 0.0098} );
+
+				// Reset our vals storage for the new field with no data yet.
+				this.vals = [];
 			}
 
 			// Append references.

@@ -36,7 +36,7 @@ class gmm_acf_field_google_map_multi extends acf_field {
 		*  label (string) Multiple words, can include spaces, visible when selecting a field type
 		*/
 		
-		$this->label = __('Google Map (Multiple Markers)', GMM_TEXTDOMAIN);
+		$this->label = __('Google Maps (Multiple Markers)', GMM_TEXTDOMAIN);
 		
 		
 		/*
@@ -644,5 +644,3 @@ new gmm_acf_field_google_map_multi( $this->settings );
 
 // class_exists check
 endif;
-
-?>
