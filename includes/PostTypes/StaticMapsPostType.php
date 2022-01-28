@@ -47,11 +47,11 @@ class StaticMapsPostType implements IRegister {
 		global $post;
 
 		// Confirm if the post_type is 'static_map'.
-		if ($post->post_type !== 'static_map') {
+		if ( $post->post_type !== 'static_map' ) {
 			return;
 		}
 
-		if (empty(get_option('field_static_maps_google_api_key'))) {
+		if ( empty( get_option('field_static_maps_google_api_key') ) ) {
 			// Render message if the API key settings field is empty
 			echo "<div class='red' style='color: red'><p>No Google Maps API Key set yet! These maps wont work without one.</p>" .
 			     "<p>Go <a href='/wp-admin/options-general.php?page=static_maps_settings'>here</a> to set your API Key</p></div>";
