@@ -11,7 +11,7 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 }
 
 // Clear Database stored data
-$static_maps = get_posts( array( 'post_type' => 'book', 'numberposts' => -1 ) );
+$static_maps = get_posts( array( 'post_type' => 'static_map', 'numberposts' => -1 ) );
 
 foreach( $static_maps as $$map ) {
 	wp_delete_post( $map->ID, true );
