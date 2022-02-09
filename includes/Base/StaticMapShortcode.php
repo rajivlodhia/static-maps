@@ -15,7 +15,7 @@ class StaticMapShortcode implements IRegister {
 
 	public function static_map_shortcode( $atts = [] ) {
 		// Return immediately if ACF's get_field function is not found.
-		if ( !function_exists('get_field') ) {
+		if ( !function_exists( 'get_field' ) ) {
 			// TODO set some kind of error here.
 			return '';
 		}
@@ -23,12 +23,12 @@ class StaticMapShortcode implements IRegister {
 		$map = '';
 
 		// Default the "map" attribute to #.
-		extract(shortcode_atts([
+		extract( shortcode_atts ( [
 			'map' => '#'
-		], $atts));
+		], $atts ) );
 
 		// Load our Static Map post.
-		$static_map_post = get_post($map);
+		$static_map_post = get_post( $map );
 
 		// Make sure this is in fact a Static Map post. Return an empty string if not.
 		if ( !isset( $static_map_post ) || $static_map_post->post_type !== 'static_map' ) {
