@@ -91,8 +91,8 @@ class GoogleStaticMap {
 	 */
 	private function generate_marker( array $field_group ) {
 		$marker = [
-			'color:' . str_replace( '#', '0x', $field_group['color'] ),// todo optional field - handle this
-			'label:' . $field_group['label'],//todo this field is optional - need to handle that
+			'color:' . str_replace( '#', '0x', $field_group['color'] ),
+			'label:' . $field_group['label'],
 			'size:' . $field_group['size'],
 		];
 
