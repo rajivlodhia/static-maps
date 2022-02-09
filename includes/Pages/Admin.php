@@ -55,8 +55,8 @@ class Admin implements IRegister {
         require_once STATIC_MAPS_PLUGIN_PATH . 'templates/admin.php';
     }
 
-    public function admin_add_maps_api() {
-	    $api_key = get_option('field_static_maps_google_api_key');
-	    wp_enqueue_script( 'static_maps_admin_google_maps', "https://maps.googleapis.com/maps/api/js?key=$api_key" );
-    }
+	function acf_update_google_maps_api() {
+		acf_update_setting( 'google_api_key', esc_attr( get_option( 'field_static_maps_google_api_key' ) ) );
+	}
+
 }
