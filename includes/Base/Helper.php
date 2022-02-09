@@ -79,4 +79,23 @@ class Helper {
 		// If we didn't find anything matching, return false.
 		return false;
 	}
+
+	/**
+	 * Returns the Google API key set in either ACF or in this plugin's own API key field.
+	 *
+	 * @return bool|string
+	 */
+	public static function get_google_maps_api_key() {
+		if ( !empty( acf_get_setting( 'google_api_key' ) ) ) {
+			$api_key = acf_get_setting( 'google_api_key' );
+		}
+		elseif ( !empty( get_option( 'field_static_maps_google_api_key' ) ) ) {
+			$api_key = get_option( 'field_static_maps_google_api_key' );
+		}
+		else {
+			$api_key = '';
+		}
+
+		return $api_key;
+	}
 }

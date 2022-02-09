@@ -17,7 +17,7 @@ class GoogleStaticMap {
 	}
 
 	public function generate_map_url() {
-		$google_maps_api_key = get_option( 'field_static_maps_google_api_key' );
+		$google_maps_api_key = Helper::get_google_maps_api_key();
 
 		$fields = get_fields( $this->post );
 

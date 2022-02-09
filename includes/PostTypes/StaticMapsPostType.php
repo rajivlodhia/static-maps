@@ -5,6 +5,7 @@
 
 namespace StaticMaps\PostTypes;
 
+use StaticMaps\Base\Helper;
 use StaticMaps\IRegister;
 
 class StaticMapsPostType implements IRegister {
@@ -51,7 +52,7 @@ class StaticMapsPostType implements IRegister {
 			return;
 		}
 
-		if ( empty( get_option('field_static_maps_google_api_key') ) ) {
+		if ( empty( Helper::get_google_maps_api_key() ) ) {
 			// Render message if the API key settings field is empty
 			echo "<div class='red' style='color: red'><p>No Google Maps API Key set yet! These maps wont work without one.</p>" .
 			     "<p>Go <a href='/wp-admin/options-general.php?page=static_maps_settings'>here</a> to set your API Key</p></div>";
