@@ -34,7 +34,6 @@ class Helper {
 		return $value;
 	}
 
-
 	/**
 	 * Gets a field value from an array of fields and applies a default if empty.
 	 * Able to search through multi-dimensional arrays.
