@@ -21,13 +21,13 @@ class Helper {
 	 * @return bool|mixed
 	 */
 	public static function get_field( $selector, $post_id = false, $format_value = true, $default = false ) {
-		if (!function_exists('get_field')) {
+		if ( !function_exists( 'get_field' ) ) {
 			return '';
 		}
 
-		$value = get_field($selector, $post_id, $format_value);
+		$value = get_field( $selector, $post_id, $format_value );
 
-		if (empty($value) && $default !== false) {
+		if ( empty( $value ) && $default !== false ) {
 			$value = $default;
 		}
 
@@ -46,9 +46,9 @@ class Helper {
 	 * @return bool|mixed
 	 */
 	public static function get_field_from_fields( array $fields, $field, $default = false ) {
-		$value = self::search_multi_array($field, $fields);
+		$value = self::search_multi_array( $field, $fields );
 
-		if (empty($fields[$field]) && $default !== false) {
+		if ( empty( $fields[ $field ] ) && $default !== false ) {
 			$value = $default;
 		}
 
@@ -65,14 +65,14 @@ class Helper {
 	 */
 	protected static function search_multi_array( $needle, array $haystack ) {
 		// Check the current scope of the array for our needle. If it exists, great! Return it.
-		if (array_key_exists($needle, $haystack)) {
-			return $haystack[$needle];
+		if ( array_key_exists( $needle, $haystack ) ) {
+			return $haystack[ $needle ];
 		}
 
-		foreach ($haystack as $item) {
+		foreach ( $haystack as $item ) {
 			// If the current item is a nested array, we need to search that.
-			if (is_array($item)) {
-				return self::search_multi_array($needle, $item);
+			if ( is_array( $item ) ) {
+				return self::search_multi_array( $needle, $item );
 			}
 		}
 

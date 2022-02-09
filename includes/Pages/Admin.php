@@ -12,30 +12,28 @@ use StaticMaps\Settings\Setting;
 
 class Admin implements IRegister {
 	public function register() {
-        add_action( 'admin_menu', [$this, 'add_admin_pages'] );
+        add_action( 'admin_menu', [ $this, 'add_admin_pages' ] );
 
-        add_filter( 'plugin_action_links_' . STATIC_MAPS_PLUGIN_BASE_NAME, [$this, 'settings_link'] );
+        add_filter( 'plugin_action_links_' . STATIC_MAPS_PLUGIN_BASE_NAME, [ $this, 'settings_link' ] );
 
-		add_action( 'admin_init', [$this, 'register_custom_fields'] );
+		add_action( 'admin_init', [ $this, 'register_custom_fields' ] );
 
-//		add_action( 'admin_head', [$this, 'admin_add_maps_api'] );
-		add_action( 'admin_enqueue_scripts', [$this, 'admin_add_maps_api'] );
+		// Register the Google Maps API key with ACF.
+		add_action( 'acf/init', [ $this, 'acf_update_google_maps_api' ] );
     }
 
     public function register_custom_fields(){
-	    $setting = new Setting('static_maps_options_group', 'field_static_maps_google_api_key');
+	    $setting = new Setting( 'static_maps_options_group', 'field_static_maps_google_api_key' );
 	    $setting->register();
 
-	    $section = new Section('section_static_maps_google', 'Google Static Maps API Settings', [], 'static_maps_settings');
+	    $section = new Section( 'section_static_maps_google', 'Google Static Maps API Settings', [], 'static_maps_settings' );
 	    $section->register();
 
-        $field = new Field('field_static_maps_google_api_key', 'Google Maps API Key', [$this, 'api_key_field_callback'], 'static_maps_settings', $section->id);
+        $field = new Field( 'field_static_maps_google_api_key', 'Google Maps API Key', [ $this, 'api_key_field_callback' ], 'static_maps_settings', $section->id );
         $field->register();
 	}
 
-
-	public function api_key_field_callback()
-	{
+	public function api_key_field_callback() {
 		$value = esc_attr( get_option( 'field_static_maps_google_api_key' ) );
 		echo '<input type="text" class="regular-text" name="field_static_maps_google_api_key" value="' . $value . '" placeholder="">';
 	}

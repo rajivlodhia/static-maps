@@ -6,7 +6,6 @@
         <?php
         settings_fields( 'static_maps_options_group' );
         do_settings_sections( 'static_maps_settings' );
-        //do_settings_fields( 'static_maps_settings', 'section_static_maps_google' );
         submit_button();
         ?>
     </form>
