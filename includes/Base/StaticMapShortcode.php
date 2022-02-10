@@ -16,8 +16,7 @@ class StaticMapShortcode implements IRegister {
 	public function static_map_shortcode( $atts = [] ) {
 		// Return immediately if ACF's get_field function is not found.
 		if ( !function_exists( 'get_field' ) ) {
-			// TODO set some kind of error here.
-			return '';
+			return new \WP_Error( 'missing_acf', __( 'Static Maps plugin is missing ACF.', 'static-maps' ) );
 		}
 
 		$map = '';
