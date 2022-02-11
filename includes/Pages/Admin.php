@@ -34,8 +34,10 @@ class Admin implements IRegister {
 	}
 
 	public function api_key_field_callback() {
-		$value = esc_attr( get_option( 'field_static_maps_google_api_key' ) );
-		echo '<input type="text" class="regular-text" name="field_static_maps_google_api_key" value="' . $value . '" placeholder="">';
+		if ( is_admin() ) {
+			$value = esc_attr( get_option( 'field_static_maps_google_api_key' ) );
+			echo '<input type="text" class="regular-text" name="field_static_maps_google_api_key" value="' . $value . '" placeholder="">';
+		}
 	}
 
     public function settings_link( $links ) {
@@ -56,7 +58,9 @@ class Admin implements IRegister {
     }
 
 	function acf_update_google_maps_api() {
-		acf_update_setting( 'google_api_key', esc_attr( get_option( 'field_static_maps_google_api_key' ) ) );
+		if ( is_admin() ) {
+			acf_update_setting( 'google_api_key', esc_attr( get_option( 'field_static_maps_google_api_key' ) ) );
+		}
 	}
 
 }
