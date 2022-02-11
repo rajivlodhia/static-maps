@@ -41,7 +41,7 @@ class StaticMapsPostType implements IRegister {
 		}
 
 		// Render the shortcode.
-		echo "<div class=''>Shortcode: <strong>[static_map map=$post->ID]</strong></div>";
+		echo "<div id='edit-slug-box'><strong>Shortcode:</strong> [static_map map=$post->ID]</div>";
 	}
 
 	/**
