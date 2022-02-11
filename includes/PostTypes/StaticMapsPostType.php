@@ -12,7 +12,7 @@ class StaticMapsPostType implements IRegister {
     public function register() {
         add_action( 'init', array( $this, 'custom_post_type' ) );
 
-	    add_action( 'edit_form_after_title', [$this, 'render_api_key_warning'] );
+	    add_action( 'admin_notices', [$this, 'api_key_warning'] );
 	    add_action( 'edit_form_after_title', [$this, 'render_shortcode'] );
     }
 
@@ -44,7 +44,10 @@ class StaticMapsPostType implements IRegister {
 		echo "<div class=''>Shortcode: <strong>[static_map map=$post->ID]</strong></div>";
 	}
 
-	function render_api_key_warning() {
+	/**
+	 * Show a red admin notice on the Static Maps edit forms if no Maps API is present.
+	 */
+	function api_key_warning() {
 		global $post;
 
 		// Confirm if the post_type is 'static_map'.
@@ -53,9 +56,10 @@ class StaticMapsPostType implements IRegister {
 		}
 
 		if ( empty( Helper::get_google_maps_api_key() ) ) {
-			// Render message if the API key settings field is empty
-			echo "<div class='red' style='color: red'><p>No Google Maps API Key set yet! These maps wont work without one.</p>" .
-			     "<p>Go <a href='/wp-admin/options-general.php?page=static_maps_settings'>here</a> to set your API Key</p></div>";
+			$settings_page_link = site_url() . '/wp-admin/options-general.php?page=static_maps_settings';
+			$class = 'notice notice-error';
+			$message = __( 'No Google Maps API Key set yet! These maps wont work without one.<br>Go <a href="' . $settings_page_link . '">here</a> to set your API Key', 'static-maps' );
+			printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), $message );
 		}
 	}
 }
