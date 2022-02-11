@@ -27,6 +27,7 @@ final class Init {
 	        Base\Activate::class,
 	        Base\Deactivate::class,
 	        Pages\Admin::class,
+	        Settings\StaticMapsACFFields::class,
 	        PostTypes\StaticMapsPostType::class,
 	        Base\StaticMapShortcode::class,
         ];
