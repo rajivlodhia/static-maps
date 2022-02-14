@@ -36,7 +36,7 @@ class StaticMapsPostType implements IRegister {
 		global $post;
 
 		// Confirm if the post_type is 'static_map'.
-		if ($post->post_type !== 'static_map') {
+		if ( $post->post_type !== 'static_map' ) {
 			return;
 		}
 
@@ -51,7 +51,7 @@ class StaticMapsPostType implements IRegister {
 		global $post;
 
 		// Confirm if the post_type is 'static_map'.
-		if ( empty($post) || $post->post_type !== 'static_map' ) {
+		if ( empty( $post ) || $post->post_type !== 'static_map' ) {
 			return;
 		}
 
