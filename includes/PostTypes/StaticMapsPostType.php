@@ -21,6 +21,7 @@ class StaticMapsPostType implements IRegister {
                 'public' => true,
                 'label' => 'Static Maps',
                 'has_archive' => false,
+                'publicly_queryable'  => false,
 				'supports' => [
 					'title',
 					'custom-fields',
