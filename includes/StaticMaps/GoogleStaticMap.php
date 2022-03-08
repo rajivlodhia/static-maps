@@ -29,7 +29,7 @@ class GoogleStaticMap {
 			'size'    => Helper::get_field_from_fields( $fields, 'size', '400x400' ),
 			'zoom'    => Helper::get_field_from_fields( $fields, 'zoom', '10' ),
 			'scale'   => Helper::get_field_from_fields( $fields, 'scale', '1' ),
-			'maptype' => Helper::get_field_from_fields( $fields, 'maptype', 'roadmap' ),
+			'maptype' => Helper::get_field_from_fields( $fields, 'map_type', 'roadmap' ),
 		];
 
 		// Build the basis of our static map with the parameters we have so far.
