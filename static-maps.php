@@ -50,7 +50,7 @@ if ( class_exists( 'StaticMaps\\Init' ) ) {
 /**
  * Advanced Custom Fields definitions.
  */
-if ( !function_exists('get_field') ) {
+if ( !function_exists( 'get_field' ) ) {
 	// Define path and URL to the ACF plugin.
 	define( 'STATIC_MAPS_ACF_PATH', STATIC_MAPS_PLUGIN_PATH . 'includes/acf/' );
 	define( 'STATIC_MAPS_ACF_URL', STATIC_MAPS_PLUGIN_URL . 'includes/acf/' );
@@ -64,7 +64,7 @@ if ( !function_exists('get_field') ) {
 	}
 
 	// (Optional) Hide the ACF admin menu item.
-	add_filter('acf/settings/show_admin', 'static_maps_acf_settings_show_admin');
+	add_filter( 'acf/settings/show_admin', 'static_maps_acf_settings_show_admin' );
 	function static_maps_acf_settings_show_admin( $show_admin ) {
 		return false;
 	}
@@ -73,7 +73,7 @@ if ( !function_exists('get_field') ) {
 /**
  * ACF Google Map Multiple Markers definitions.
  */
-if( !class_exists('gmm_acf_plugin_google_map_multi') ) {
+if( !class_exists( 'gmm_acf_plugin_google_map_multi' ) ) {
 	define( 'STATIC_MAPS_ACF_GMM_PATH', STATIC_MAPS_PLUGIN_PATH . 'includes/acf-google-map-multi/' );
 
 	// Include the ACF Google Maps Multiple Markers field plugin.
