@@ -6,7 +6,6 @@
 namespace StaticMaps\Base;
 
 use StaticMaps\IRegister;
-//use StaticMaps\Base\Constants;
 
 class Activate implements IRegister{
     public function register() {
