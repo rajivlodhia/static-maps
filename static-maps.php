@@ -64,7 +64,7 @@ if ( !function_exists('get_field') ) {
 	}
 
 	// (Optional) Hide the ACF admin menu item.
-	//add_filter('acf/settings/show_admin', 'static_maps_acf_settings_show_admin');
+	add_filter('acf/settings/show_admin', 'static_maps_acf_settings_show_admin');
 	function static_maps_acf_settings_show_admin( $show_admin ) {
 		return false;
 	}
