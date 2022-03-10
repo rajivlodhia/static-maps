@@ -7,7 +7,7 @@
 Plugin Name: Static Maps
 Plugin URI: https://www.rajivlodhia.com/static-maps
 Description: Create static maps with Google's Static Maps API and use them anywhere with a shortcode.
-Version: 0.0.1-alpha
+Version: 1.0.0
 Author: Rajiv Lodhia
 Author URI: https://www.rajivlodhia.com
 License: GPLv2 or later 
