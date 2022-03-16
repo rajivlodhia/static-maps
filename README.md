@@ -45,4 +45,4 @@ To use the map fields in the WordPress backend to choose your pins, etc you will
 ## Credits
 This plugin is built by Rajiv Lodhia and includes:
 - [ACF Pro](https://www.advancedcustomfields.com/pro/) built by [Delicious Brains](https://deliciousbrains.com/)
-- [ACF Google Maps Field (Multiple Markers)](https://wordpress.org/plugins/acf-google-map-field-multiple-markers/) by Rajiv Lodhia
+- [ACF Google Maps Field (Multiple Markers)](https://wordpress.org/plugins/acf-google-map-field-multiple-markers/) built by Rajiv Lodhia
