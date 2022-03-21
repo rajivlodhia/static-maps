@@ -7,10 +7,10 @@ namespace StaticMaps\Settings;
 
 
 class Section {
-	public string $id;
-	public string $title;
+	public $id;
+	public $title;
 	public $callback;
-	public string $page;
+	public $page;
 
 	public function __construct( $id, $title, $callback, $page ) {
 		$this->id = $id;

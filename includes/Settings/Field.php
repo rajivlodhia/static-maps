@@ -7,12 +7,12 @@ namespace StaticMaps\Settings;
 
 
 class Field {
-	public string $id;
-	public string $title;
+	public $id;
+	public $title;
 	public $callback;
-	public string $page;
+	public $page;
 	public $section;
-	public array $args;
+	public $args;
 
 	public function __construct( $id, $title, $callback, $page, $section = 'default', $args = [] ) {
 		$this->id = $id;

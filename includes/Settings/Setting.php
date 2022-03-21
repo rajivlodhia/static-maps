@@ -8,8 +8,8 @@ namespace StaticMaps\Settings;
 
 class Setting {
 
-	public string $option_group;
-	public string $option_name;
+	public $option_group;
+	public $option_name;
 	public $callback;
 
 	public function __construct( $option_group, $option_name, $callback = '' ) {
