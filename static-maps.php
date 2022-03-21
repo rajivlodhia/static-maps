@@ -42,11 +42,6 @@ define( 'STATIC_MAPS_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'STATIC_MAPS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'STATIC_MAPS_PLUGIN_FILE', __FILE__ );
 
-// Initialise all the core classes of the plugin.
-if ( class_exists( 'StaticMaps\\Init' ) ) {
-	StaticMaps\Init::register_services();
-}
-
 /**
  * Advanced Custom Fields definitions.
  */
@@ -78,4 +73,9 @@ if( !class_exists( 'gmm_acf_plugin_google_map_multi' ) ) {
 
 	// Include the ACF Google Maps Multiple Markers field plugin.
 	include_once( STATIC_MAPS_ACF_GMM_PATH . 'acf-google-map-multi.php' );
+}
+
+// Initialise all the core classes of the plugin.
+if ( class_exists( 'StaticMaps\\Init' ) ) {
+	StaticMaps\Init::register_services();
 }
