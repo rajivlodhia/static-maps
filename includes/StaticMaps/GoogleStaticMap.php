@@ -10,7 +10,7 @@ use StaticMaps\Base\Helper;
 class GoogleStaticMap {
 
 	// The post of the static map.
-	public \WP_Post $post;
+	public $post;
 
 	public function __construct( \WP_Post $post ) {
 		$this->post = $post;
