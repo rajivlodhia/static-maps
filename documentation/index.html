@@ -1,0 +1,183 @@
+
+<!doctype html>
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+
+	<title>Google Static Maps Builder - The visual solution to static maps on WordPress</title>
+
+	<meta name="description" content="A WordPress plugin designed to make it easy for users to create and embed static maps using Google’s Static Maps API. The interface that the plugin provides (built with Advanced Custom Fields Pro) solves the problem with the Google Static Maps API of it being complicated and unintuitive to set up.">
+	<meta name="author" content="Rajiv Lodhia">
+	<meta name="copyright" content="Rajiv Lodhia">
+	<meta name="generator" content="Documenter v2.0 https://evp.to/documenter">
+	<meta name="date" content="2022-04-02T16:00:52+02:00">
+
+	<link rel="stylesheet" href="css/style.css" media="all">
+	
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+
+	<style>
+		html{background-color:#FFFFFF;color:#383838;}
+		::-moz-selection{background:#444444;color:#DDDDDD;}
+		::selection{background:#444444;color:#DDDDDD;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#0000FF;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #3D92A7, #3D92A7);
+			  background-image: -ms-linear-gradient(top, #3D92A7, #3D92A7);
+			  background-image: -webkit-gradient(linear, 0 0, 0 3D92A7%, from(#DDDDDD), to(#3D92A7));
+			  background-image: -webkit-linear-gradient(top, #3D92A7, #3D92A7);
+			  background-image: -o-linear-gradient(top, #3D92A7, #3D92A7);
+			  background-image: linear-gradient(top, #3D92A7, #3D92A7);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3D92A7', endColorstr='#3D92A7', GradientType=0);
+			  border-color: #3D92A7 #3D92A7 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #3D92A7 #3D92A7 #bfbfbf;
+		  background-color: #3D92A7;
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#DDDDDD;color:#222222;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #EEEEEE;-moz-text-shadow:1px 1px 0px #EEEEEE;text-shadow:1px 1px 0px #EEEEEE;}
+		#documenter_sidebar ul{border-top:1px solid #AAAAAA;}
+		#documenter_sidebar ul a{border-top:1px solid #EEEEEE;border-bottom:1px solid #AAAAAA;color:#444444;}
+		#documenter_sidebar ul a:hover{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_sidebar ul a.current{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+
+</head>
+<body class="documenter-project-google-static-maps-builder">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#installation_guide" title="Installation Guide">Installation Guide</a></li>
+			<li><a href="#usage_guide" title="Usage Guide">Usage Guide</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright Rajiv Lodhia 2022<br>
+		made with the <a href="https://evp.to/documenter">Documenter v2.0</a>
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Google Static Maps Builder</h1>
+	<h2>The visual solution to static maps on WordPress</h2>
+	<div id="documenter_buttons">
+		<a href="https://rajivlodhia.com/projects/google-static-maps-builder/" class="btn btn-primary btn-large">View Example Maps</a> 
+	</div>
+	<hr>
+	<ul>
+	
+	
+	<li>by: Rajiv Lodhia</li>
+	<li><a href="https://rajivlodhia.com/projects/google-static-maps-builder/">rajivlodhia.com/projects/google-static-maps-builder</a></li>
+	
+	</ul>
+	<p>A WordPress plugin designed to make it easy for users to create and embed static maps using Google’s Static Maps API. The interface that the plugin provides (built with Advanced Custom Fields Pro) solves the problem with the Google Static Maps API of it being complicated and unintuitive to set up.</p>
+	</section>
+
+	<section id="installation_guide">
+	<div class="page-header"><h3>Installation Guide</h3><hr class="notop"></div>
+<div>
+	1.&nbsp; Copy the `static-maps` folder into your `wp-content/plugins folder`</div>
+<div>
+	2.&nbsp; Activate the Static Maps plugin via the plugins admin page</div>
+<div>
+	3.&nbsp; Set your Google Maps API key. You can do this by either going the plugin&#39;s own setting at `/wp-admin/options-general.php?page=static_maps_settings` [Fig.1] OR you can ACF&#39;s suggested method to register your API key (https://www.advancedcustomfields.com/resources/google-map/#requirements)</div>
+<div>
+	4.&nbsp; Create a new Static Map by clicking on the Static Maps button on the left admin bar and clicking &quot;Add New&quot;. If your API key is not set up, you should see warning.</div>
+	<br>
+	<img width="600px" src="images/maps_api_settings_page.jpg" />
+	<figcaption>Fig.1 - The Static Maps setting pages to easily input your Google Maps API key.</figcaption>
+</section>
+<section id="usage_guide">
+	<div class="page-header"><h3>Usage Guide</h3><hr class="notop"></div>
+<div>
+	Once your Google Maps API key has been set up, you should be ready to start setting up your first Static Map.</div>
+<div>
+	&nbsp;</div>
+<div>
+	Start by going to Static Maps --&gt; Add New (`/wp-admin/post-new.php?post_type=static_map`). [Fig.2]</div>
+<div>
+	&nbsp;</div>
+<div>
+	Below the Title field, you&#39;ll see the shortcode you can use to add that specific Static Map anywhere on your site. [Fig.3]</div>
+
+	<br>
+<img width="450px" src="images/add_new_map_button.jpg" />
+<figcaption>Fig.2 - Highlighting where to add a new static map.</figcaption>
+	<br>
+<img width="300px" src="images/shortcode_display.jpg" />
+<figcaption>Fig.3 - Highlighting where the shortcode is displayed for each static map.</figcaption>
+<div>
+	&nbsp;</div>
+<h4 id="usage_guide_static_map_base_map_settings">Static Map base map settings</h4>
+<div>
+	The first set of fields when creating your Static Map will be the base map settings:</div>
+<div>
+	- Center: The center of this Static Map - can be defined with a map pin or with lng,lat coordinates</div>
+<div>
+	- Size: Google Maps limits this to 640x640 (1280x1280 with scale=2)</div>
+<div>
+	- Zoom: Defaults to 10 - the lower the number, the more zoomed out the Static Map will be</div>
+<div>
+	- Scale</div>
+<div>
+	- Map Type</div>
+<div>
+	&nbsp;</div>
+<h4 id="usage_guide_map_markers">Map Markers</h4>
+<div>
+	You can add as many markers to your Static Map as you want by clicking &quot;Add Marker&quot;. Markers are made of the following settings:</div>
+<div>
+	- Label: This character will show on the marker/pin itself. Can be 1 character A-Z or 0-9. Can also be left blank</div>
+<div>
+	- Size: The size of the map marker - sizes are predefined as per Google&#39;s documentation</div>
+<div>
+	- Color: The color of the map marker</div>
+<div>
+	- Pin Location(s): You can add as many pins as you want, and you can add them with either a list of lng,lat coordinates or by choosing the locations on a Google Map.</div>
+<div>
+	&nbsp;</div>
+<div>To see examples maps with an explanation of their settings, visit <a href="https://rajivlodhia.com/projects/google-static-maps-builder/" target="_blank">rajivlodhia.com/projects/google-static-maps-builder</a>
+<h4 id="usage_guide_google_maps_api_key">Google Maps API Key</h4>
+<div>
+	Your Google Maps API key will need at bare minimum the Maps Static API to be enabled on your API key</div>
+<div>
+	for this plugin do anything useful.</div>
+<div>
+	To use the map fields in the WordPress backend to choose your pins, etc you will need the following APIs enabled:</div>
+<div>
+	- Maps Javascript API</div>
+<div>
+	- Places API</div>
+<div>
+	- Geocoding API</div>
+</section>
+
+	</div>
+</body>
+</html>
