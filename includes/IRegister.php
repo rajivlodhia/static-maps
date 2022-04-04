@@ -10,5 +10,5 @@ namespace StaticMaps;
   * so the required functions are triggered on Init.
   */
 interface IRegister {
-    public function register();
+	public function register();
 }

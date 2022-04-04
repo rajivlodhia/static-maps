@@ -9,25 +9,25 @@ use StaticMaps\Base\Helper;
 use StaticMaps\IRegister;
 
 class StaticMapsPostType implements IRegister {
-    public function register() {
-        add_action( 'init', array( $this, 'custom_post_type' ) );
+	public function register() {
+		add_action( 'init', array( $this, 'custom_post_type' ) );
 
-	    add_action( 'admin_notices', [$this, 'api_key_warning'] );
-	    add_action( 'edit_form_after_title', [$this, 'render_shortcode'] );
-    }
+		add_action( 'admin_notices', [$this, 'api_key_warning'] );
+		add_action( 'edit_form_after_title', [$this, 'render_shortcode'] );
+	}
 
-    public function custom_post_type() {
+	public function custom_post_type() {
 		register_post_type( 'static_map', [
-                'public' => true,
-                'label' => __('Static Maps', 'static-maps'),
-                'has_archive' => false,
-                'publicly_queryable'  => false,
+				'public' => true,
+				'label' => __('Static Maps', 'static-maps'),
+				'has_archive' => false,
+				'publicly_queryable'  => false,
 				'supports' => [
 					'title',
 					'custom-fields',
 				],
-            ]
-        );
+			]
+		);
 	}
 
 	/**
