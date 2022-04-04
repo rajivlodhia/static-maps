@@ -51,7 +51,7 @@ class Helper {
 			$value = $default;
 		}
 
-		return $value;
+		return esc_html__( $value );
 	}
 
 	/**
@@ -95,6 +95,6 @@ class Helper {
 			$api_key = '';
 		}
 
-		return $api_key;
+		return esc_html__( $api_key );
 	}
 }
