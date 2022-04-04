@@ -26,10 +26,10 @@ class Admin implements IRegister {
 	    $setting = new Setting( 'static_maps_options_group', 'field_static_maps_google_api_key' );
 	    $setting->register();
 
-	    $section = new Section( 'section_static_maps_google', 'Google Static Maps API Settings', [], 'static_maps_settings' );
+	    $section = new Section( 'section_static_maps_google', __('Google Static Maps API Settings', 'static-maps'), [], 'static_maps_settings' );
 	    $section->register();
 
-        $field = new Field( 'field_static_maps_google_api_key', 'Google Maps API Key', [ $this, 'api_key_field_callback' ], 'static_maps_settings', $section->id );
+        $field = new Field( 'field_static_maps_google_api_key', __('Google Maps API Key', 'static-maps'), [ $this, 'api_key_field_callback' ], 'static_maps_settings', $section->id );
         $field->register();
 	}
 
@@ -41,13 +41,13 @@ class Admin implements IRegister {
 	}
 
     public function settings_link( $links ) {
-        $settings_link = '<a href="options-general.php?page=static_maps_settings">Settings</a>';
+        $settings_link = '<a href="options-general.php?page=static_maps_settings">' . __('Settings', 'static-maps') . '</a>';
         array_push( $links, $settings_link );
         return $links;
     }
 
     public function add_admin_pages() {
-        add_submenu_page( 'options-general.php', 'Static Maps', 'Static Maps', 'manage_options', 'static_maps_settings', array( $this, 'admin_index' ), 110 );
+        add_submenu_page( 'options-general.php', __('Static Maps', 'static-maps'), __('Static Maps', 'static-maps'), 'manage_options', 'static_maps_settings', array( $this, 'admin_index' ), 110 );
     }
 
     /**

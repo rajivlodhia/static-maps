@@ -1,5 +1,5 @@
 <div class="wrap">
-    <h1>Static Maps Settings</h1>
+    <h1><?php echo __('Static Maps Settings', 'static-maps'); ?></h1>
     <?php settings_errors(); ?>
 
     <form method="post" action="options.php">

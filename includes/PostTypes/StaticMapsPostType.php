@@ -19,7 +19,7 @@ class StaticMapsPostType implements IRegister {
     public function custom_post_type() {
 		register_post_type( 'static_map', [
                 'public' => true,
-                'label' => 'Static Maps',
+                'label' => __('Static Maps', 'static-maps'),
                 'has_archive' => false,
                 'publicly_queryable'  => false,
 				'supports' => [
