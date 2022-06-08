@@ -1,10 +1,10 @@
 === ACF: Google Maps Field (Multiple Markers) ===
 Contributors: Rajiv Lodhia
-Tags: acf, custom fields, advanced custom fields, google maps, maps, markers, pins
+Tags: acf, custom fields, advanced custom fields, acf addon, google maps, maps, markers, pins
 Requires at least: 4.7
-Tested up to: 5.9
+Tested up to: 6.0
 Requires PHP: 5.6
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,3 +74,6 @@ This is a modified/enhanced version of the standard ACF Google Map plugin, so so
 
 = 1.0.4 =
 * JS set to strict mode with "use strict";
+
+= 1.0.5 =
+* Retested with WordPress 6.0
